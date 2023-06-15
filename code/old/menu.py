@@ -15,7 +15,7 @@ class Menu:
         self.all_sprites = pygame.sprite.Group()
 
         # scale factor
-        bg_height = pygame.image.load('C:/Users/OliwerUrbaniak/Documents/Visual Studio Code/Python/SpaceRunner/graphics/environment/background.png').get_height()
+        bg_height = pygame.image.load('./SpaceRunner/graphics/environment/background.png').get_height()
         self.scale_factor = WINDOW_HEIGHT / bg_height
 
         # sprite setup 
@@ -23,7 +23,7 @@ class Menu:
         Ground([self.all_sprites],self.scale_factor)
 
         # text
-        self.font = pygame.font.Font('C:/Users/OliwerUrbaniak/Documents/Visual Studio Code/Python/SpaceRunner/graphics/font/BD_Cartoon_Shout.ttf',20)
+        self.font = pygame.font.Font('./SpaceRunner/graphics/font/BD_Cartoon_Shout.ttf',20)
         self.title = self.font.render('Space Runner',True,'white')
         self.title_rect = self.title.get_rect(center = (WINDOW_WIDTH / 2,WINDOW_HEIGHT / 4))
 
@@ -34,7 +34,7 @@ class Menu:
         self.instructions_rect = self.instructions.get_rect(center = (WINDOW_WIDTH / 2,WINDOW_HEIGHT / 1.2))
 
         # music 
-        self.music = pygame.mixer.Sound('C:/Users/OliwerUrbaniak/Documents/Visual Studio Code/Python/SpaceRunner/sounds/music.mp3')
+        self.music = pygame.mixer.Sound('./SpaceRunner/sounds/music.mp3')
         self.music.play(loops = -1)
         self.music.set_volume(0.3)
 
