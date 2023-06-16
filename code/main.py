@@ -661,8 +661,8 @@ def score():
         CREDIT_RECT = SCORE_TEXT.get_rect(center=(240, 200))
         SCREEN.blit(CREDIT_TEXT, CREDIT_RECT)
 
-        SCORE3_TEXT = get_font(25).render("Highscore: " + str(highscore) , True, "Black")
-        SCORE3_RECT = SCORE3_TEXT.get_rect(center=(160, 250))
+        SCORE3_TEXT = get_font(20).render("Highscore: " + str(highscore) , True, "Black")
+        SCORE3_RECT = SCORE3_TEXT.get_rect(center=(160, 220))
         SCREEN.blit(SCORE3_TEXT, SCORE3_RECT)
 
 
