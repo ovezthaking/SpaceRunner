@@ -636,7 +636,17 @@ def score():
         
         with open('./SpaceRunner/txt/totalscore.txt', 'r') as tscorefile:
             totalscore = int(tscorefile.read())
-
+        
+        with open('./SpaceRunner/txt/highscore.txt', 'r') as hscorefile:
+            highscore = int(hscorefile.read())
+            if score > highscore:
+                with open('./SpaceRunner/txt/highscore.txt', 'w') as hscorefile:
+                    hscorefile.write(str(score))
+            else:
+                with open('./SpaceRunner/txt/highscore.txt', 'w') as hscorefile:
+                    hscorefile.write(str(highscore))
+        with open('./SpaceRunner/txt/highscore.txt', 'r') as hscorefile:
+            highscore = int(hscorefile.read())
 
         SCORE_TEXT = get_font(45).render("Your Score: " + str(score) , True, "Black")
         SCORE_RECT = SCORE_TEXT.get_rect(center=(240, 100))
@@ -648,9 +658,12 @@ def score():
         SCREEN.blit(SCORE2_TEXT, SCORE2_RECT)
 
         CREDIT_TEXT = get_font(10).render("The total score is the currency you can buy items with "  , True, "Black")
-        CREDIT_RECT = SCORE_TEXT.get_rect(center=(240, 250))
+        CREDIT_RECT = SCORE_TEXT.get_rect(center=(240, 200))
         SCREEN.blit(CREDIT_TEXT, CREDIT_RECT)
 
+        SCORE3_TEXT = get_font(25).render("Highscore: " + str(highscore) , True, "Black")
+        SCORE3_RECT = SCORE3_TEXT.get_rect(center=(160, 250))
+        SCREEN.blit(SCORE3_TEXT, SCORE3_RECT)
 
 
         OPTIONS_BACK = Button(image=None, pos=(240, 700), 
